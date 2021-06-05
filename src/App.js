@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import Prism from "prismjs";
+import "./App.css";
+import "prismjs/themes/prism-shades-of-purple.css";
 
-function App() {
+const App = () => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
+  const code = ` const getCoffee = (count) => {
+    if(count < 3) {
+      return "Here is your ☕";
+    } else {
+      return "No more babe."
+    }
+  }
+  `;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <pre>
+        <code className="language-javascript">{code}</code>
+      </pre>
     </div>
   );
-}
+};
 
 export default App;

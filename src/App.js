@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Prism from "prismjs";
 import "./App.css";
 import "prismjs/themes/prism-shades-of-purple.css";
+import Code from "./Code";
 
 const App = () => {
   useEffect(() => {
@@ -19,9 +20,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <pre>
-        <code className="language-javascript">{code}</code>
-      </pre>
+      <Code code={code} language={"javascript"} />
     </div>
   );
 };
